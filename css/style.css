@@ -48,8 +48,9 @@ header {
 
 main {
     display: flex;
-    flex-grow: 1;
+    align-items: center;
     justify-content: space-evenly;
+    flex-grow: 1;
 }
 
 .hero {
