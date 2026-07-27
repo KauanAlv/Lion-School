@@ -81,10 +81,10 @@ main {
 
 .btn-ds {
     display: flex;
-    width: 400px;
-    height: 200px;
     align-items: center;
     justify-content: center;
+    width: 400px;
+    height: 200px;
     background-color: var(--color-1);
     gap: 20px;
     border: none;
@@ -172,17 +172,17 @@ footer {
         height: 120px;
     }
 
-    .logo img{
+    .logo img {
         width: 100px;
         height: 100px;
     }
 
-    .sair img{
+    .sair img {
         width: 40px;
         height: 40px;
     }
 
-    .sair span{
+    .sair span {
         display: none;
     }
 
@@ -198,8 +198,69 @@ footer {
         width: 280px;
     }
 
-    .hero-left img{
+    .hero-left img {
         display: none;
     }
 
+    .hero-right {
+        padding-top: 80px;
+        padding-bottom: 70px;
+    }
+
+    .hero-right img {
+        display: none;
+    }
+
+    .btn-ds, .btn-redes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+    }
+
+    .btn-ds,
+    .btn-redes span {
+        color: white;
+        font-size: 44px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+    }
+
+    .frame {
+        display: flex;
+        flex-direction: column;
+        height: 25rem;
+    }
+
+    .contato {
+        display: flex;
+        text-align: center;
+        padding: 50px 0px;
+    }
+
+    .icons {
+        display: flex;
+        gap: 30px;
+    }
+    .info-icons {
+        gap: 30px;
+    }
+
+    .copyright {
+        order: 1;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 15px;
+    }
+    
+    .redes-sociais {
+        display: flex;
+    }
 }
