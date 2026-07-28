@@ -2,6 +2,7 @@
 
 import { renderizarPagina } from "../main.js"
 import { getCursos } from "../router/curso.js"
+import { criarTurma } from "./turma.js"
 
 export async function criarHome() {
     const hero = document.createElement('div')
@@ -35,7 +36,8 @@ export async function criarHome() {
     cursos.forEach (function(curso) {
         const button = document.createElement('button')
         button.classList.add('botoes')
-        button.onclick = () => renderizarPagina('curso')
+        
+        button.onclick = () => renderizarPagina('curso', curso.id)
 
         const imgCurso = document.createElement('img')
         imgCurso.src = curso.icon
