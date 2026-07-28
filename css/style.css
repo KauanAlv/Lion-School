@@ -3,6 +3,7 @@
     --color-2: #fff;
 }
 
+/* TELA HOME */
 body {
     display: flex;
     flex-direction: column;
@@ -44,6 +45,61 @@ header {
     font-size: 30px;
     font-weight: 600;
     color: var(--color-2);
+}
+
+footer {
+    display: flex;
+    height: 11rem;
+    background-color: var(--color-1);
+    justify-content: space-evenly;
+}
+
+.frame {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 87%;
+}
+
+.contato {
+    display: flex;
+    gap: 1rem;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-icons {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-2);
+    font-size: 20px;
+    font-weight: 300;
+    gap: 1rem;
+}
+
+.copyright {
+    color: var(--color-2);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 20px;
+}
+
+.borda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    border: 2px solid white;
+    width: 60px;
+    height: 60px;
 }
 
 main {
@@ -110,62 +166,7 @@ button {
     width: 100px;
 }
 
-footer {
-    display: flex;
-    height: 11rem;
-    background-color: var(--color-1);
-    justify-content: space-evenly;
-}
-
-.frame {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 87%;
-}
-
-.contato {
-    display: flex;
-    gap: 1rem;
-}
-
-.icons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.info-icons {
-    display: flex;
-    flex-direction: column;
-    color: var(--color-2);
-    font-size: 20px;
-    font-weight: 300;
-    gap: 1rem;
-}
-
-.copyright {
-    color: var(--color-2);
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.redes-sociais {
-    display: flex;
-    gap: 20px;
-}
-
-.borda {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    border: 2px solid white;
-    width: 60px;
-    height: 60px;
-}
-
-/* RESPONSIVIDADE MOBILE */
+/* RESPONSIVIDADE MOBILE DA TELA HOME */
 @media (max-width: 480px) {
     header {
         display: flex;
@@ -264,3 +265,5 @@ footer {
         display: flex;
     }
 }
+
+/* TELA DE ALUNOS DO CURSO */

@@ -8,8 +8,8 @@ const paginas = {
     home: {
         titulo: 'Lion School',
         renderizar: criarHome
-    }/* ,
-    curso: {
+    },
+    /*curso: {
         titulo: 'Alunos do Curso',
         renderizar: criarCurso
     },

@@ -10,9 +10,6 @@ export async function criarHome() {
     const heroLeft = document.createElement('div')
     heroLeft.classList.add('hero-left')
 
-    /* const spanHeroLeft = document.createElement('span')
-    spanHeroLeft.textContent = 'curso' */
-
     const textHeroLeft = document.createElement('p')
     textHeroLeft.innerHTML = "Escolha um <span>curso</span> para gerenciar"
 
