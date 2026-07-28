@@ -1,8 +1,9 @@
 'use strict'
 
 import { renderizarPagina } from "../main.js"
+import { getCursos } from "../router/curso.js"
 
-export function criarHome() {
+export async function criarHome() {
     const hero = document.createElement('div')
     hero.classList.add('hero')
 
@@ -33,31 +34,23 @@ export function criarHome() {
     const heroRight = document.createElement('div')
     heroRight.classList.add('hero-right')
 
-    const buttonDS = document.createElement('button')
-    buttonDS.classList.add('btn-ds')
+    let cursos = await getCursos()
+    cursos.forEach (function(curso) {
+        const button = document.createElement('button')
+        button.classList.add('botoes')
+        button.onclick = () => renderizarPagina('curso')
 
-    const imgButtonDS = document.createElement('img')
-    imgButtonDS.src = '../../img/ds.png'
-    imgButtonDS.alt = 'Logo DS'
+        const imgCurso = document.createElement('img')
+        imgCurso.src = curso.icon
+        imgCurso.classList.add('icons-cursos')
+        imgCurso.alt = `Ícone do curso de ${curso.nome}`
 
-    const spanButtonDS = document.createElement('span')
-    spanButtonDS.textContent = 'DS'
+        const spanCurso = document.createElement('span')
+        spanCurso.textContent = curso.sigla
 
-    buttonDS.append(imgButtonDS, spanButtonDS)
-
-    const buttonRedes = document.createElement('button')
-    buttonRedes.classList.add('btn-redes')
-
-    const imgButtonRedes = document.createElement('img')
-    imgButtonRedes.src = '../../img/redes.png'
-    imgButtonRedes.alt = 'Logo Redes'
-
-    const spanButtonRedes = document.createElement('span')
-    spanButtonRedes.textContent = 'REDES'
-
-    buttonRedes.append(imgButtonRedes, spanButtonRedes)
-
-    heroRight.append(buttonDS, buttonRedes)
+        button.append(imgCurso, spanCurso)
+        heroRight.appendChild(button)
+    })
 
     hero.append(heroLeft, heroCenter, heroRight)
     return hero

@@ -80,7 +80,7 @@ main {
     gap: 50px;
 }
 
-.btn-ds {
+.botoes {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,24 +90,24 @@ main {
     gap: 20px;
     border: none;
     box-shadow: 12px 12px 6px #3347B080;
+    transition: 0.2s;
 }
 
-.btn-ds,
-.btn-redes span {
+button {
+    cursor: pointer;
+}
+
+.botoes span {
     color: white;
     font-size: 64px;
 }
 
-.btn-redes {
-    display: flex;
-    width: 400px;
-    height: 200px;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-1);
-    gap: 20px;
-    border: none;
-    box-shadow: 12px 12px 6px #3347B080;
+.botoes:hover {
+    transform: translateY(-5px) scale(1);
+}
+
+.icons-cursos {
+    width: 100px;
 }
 
 footer {
@@ -212,7 +212,7 @@ footer {
         display: none;
     }
 
-    .btn-ds, .btn-redes {
+    .botoes {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -220,8 +220,7 @@ footer {
         height: 200px;
     }
 
-    .btn-ds,
-    .btn-redes span {
+    .botoes span {
         color: white;
         font-size: 44px;
     }
