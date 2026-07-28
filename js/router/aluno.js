@@ -16,7 +16,7 @@ export async function getAluno(id) {
 
 export async function getAlunosByIdCurso(idCurso) {
     const response = await fetch(`${URL}?curso_id=${idCurso}`)
-    if (!response.ok) throw new Error(`Erro ao buscar o aluno do curso de id ${idCurso}`)
+    if (!response.ok) throw new Error(`Erro ao buscar alunos do curso de id ${idCurso}`)
     return response.json()
 }
 

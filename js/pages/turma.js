@@ -1,6 +1,8 @@
 'use strict'
 
-export async function criarTurma(idCurso) {
+import { getAlunosByIdCurso } from "../router/aluno.js"
+
+export async function criarTurma(curso) {
 
     const main = document.createElement('div')
     main.classList.add('turmas')
@@ -40,7 +42,6 @@ export async function criarTurma(idCurso) {
         option.textContent = item.texto
 
         select.appendChild(option)
-
     })
 
     statusLeft.appendChild(select)
@@ -73,17 +74,48 @@ export async function criarTurma(idCurso) {
 
     legendaFinalizado.append(amarelo, textoFinalizado)
 
-    statusRight.append(
-        legendaTitulo,
-        legendaCursando,
-        legendaFinalizado
-    )
+    statusRight.append(legendaTitulo, legendaCursando, legendaFinalizado)
 
-    status.append(statusLeft,statusRight)
-
+    status.append(statusLeft, statusRight)
     headerStatus.appendChild(status)
 
     main.appendChild(headerStatus)
+
+    const alunos = await getAlunosByIdCurso(curso.id)
+
+    const tituloAlunos = document.createElement('div')
+    tituloAlunos.classList.add('titulo-alunos')
+
+    const titulo = document.createElement('h1')
+    titulo.textContent = curso.nome
+
+    tituloAlunos.appendChild(titulo)
+
+    main.appendChild(tituloAlunos)
+
+    const containerCards = document.createElement('div')
+    containerCards.classList.add('cards-alunos')
+
+    alunos.forEach(aluno => {
+        const card = document.createElement('div')
+        card.classList.add('card-aluno')
+
+        const imagem = document.createElement('img')
+        imagem.src = aluno.foto
+        imagem.alt = aluno.nome
+
+        const nome = document.createElement('h2')
+        nome.textContent = aluno.nome
+
+        const statusAluno = document.createElement('span')
+        statusAluno.textContent = aluno.status
+
+        card.append(imagem,nome,statusAluno)
+
+        containerCards.appendChild(card)
+    })
+
+    main.appendChild(containerCards)
 
     return main
 }

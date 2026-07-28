@@ -172,7 +172,7 @@ button {
 
 /* RESPONSIVIDADE MOBILE DA TELA HOME */
 @media (max-width: 480px) {
-    header {
+    .header-logo {
         display: flex;
         padding: 20px;
         height: 120px;
