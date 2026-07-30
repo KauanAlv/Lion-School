@@ -89,30 +89,59 @@ export async function criarTurma(curso) {
     const containerCards = document.createElement('div')
     containerCards.classList.add('cards-alunos')
 
-    alunos.forEach(function (aluno) {
-        const card = document.createElement('div')
-        card.classList.add('card-aluno')
+    function criarCards(lista) {
+        containerCards.replaceChildren()
 
-        if (aluno.status.toLowerCase() == 'cursando') {
-            card.classList.add('cursando')
-        } else {
-            card.classList.add('finalizado')
+        lista.forEach(function (aluno) {
+
+            const card = document.createElement('div')
+            card.classList.add('card-aluno')
+
+            if (aluno.status == 'cursando') {
+                card.classList.add('cursando')
+            } else {
+                card.classList.add('finalizado')
+            }
+
+            const imagem = document.createElement('img')
+            imagem.src = aluno.foto
+            imagem.alt = aluno.nome
+
+            const nome = document.createElement('h2')
+            nome.textContent = aluno.nome
+
+            const statusAluno = document.createElement('span')
+            statusAluno.textContent = aluno.status
+
+            card.append(imagem, nome, statusAluno)
+
+            containerCards.append(card)
+        })
+    }
+
+    criarCards(alunos)
+
+    select.onchange = function () {
+        if (select.value == 'todos') {
+            criarCards(alunos)
         }
 
-        const imagem = document.createElement('img')
-        imagem.src = aluno.foto
-        imagem.alt = aluno.nome
+        if (select.value == 'cursando') {
+            criarCards(
+                alunos.filter(function (aluno) {
+                    return aluno.status == 'cursando'
+                })
+            )
+        }
 
-        const nome = document.createElement('h2')
-        nome.textContent = aluno.nome
-
-        const statusAluno = document.createElement('span')
-        statusAluno.textContent = aluno.status
-
-        card.append(imagem, nome, statusAluno)
-
-        containerCards.append(card)
-    })
+        if (select.value == 'finalizado') {
+            criarCards(
+                alunos.filter(function (aluno) {
+                    return aluno.status == 'finalizado'
+                })
+            )
+        }
+    }
 
     main.append(headerStatus, tituloAlunos, containerCards)
 

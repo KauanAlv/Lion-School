@@ -39,6 +39,12 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
+}
+
+.sair:hover {
+    transform: translateY(-6px);
+    transition: 0.4s;
 }
 
 .sair span {
