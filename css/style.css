@@ -419,7 +419,8 @@ select {
         font-size: 15px;
     }
 
-    .azul, .amarelo {
+    .azul,
+    .amarelo {
         width: 15px;
         height: 15px;
     }
@@ -427,7 +428,7 @@ select {
     .status-right {
         padding-bottom: 10px;
     }
-    
+
     .titulo-alunos {
         text-align: center;
         font-size: 25px;
@@ -437,4 +438,106 @@ select {
     .cards-alunos {
         grid-template-columns: repeat(1, 200px);
     }
+}
+
+/* TELA DO RELATÓRIO DO ALUNO*/
+.main-aluno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-aluno {
+    display: flex;
+    width: 87%;
+    justify-content: space-between;
+}
+
+.caixa {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.aluno {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.aluno img {
+    display: flex;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.aluno span {
+    font-size: 20px;
+    color: var(--color-1);
+    font-weight: 400;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+}
+
+.grafico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nota {
+    color: #3248b8;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 18px;
+    height: 300px;
+    background-color: #EEEFF8;
+}
+
+.valor {
+    width: 100%;
+    background-color: var(--color-1);
+    box-shadow: 0 0 18px rgba(50, 72, 216, 0.9);
+}
+
+.valor.aprovado {
+    background-color: var(--color-1);
+    box-shadow: 0 0 18px rgba(51, 71, 176, .8);
+}
+
+.valor.recuperacao {
+    background-color: #E5B657;
+    box-shadow: 0 0 18px rgba(229, 182, 87, .8);
+}
+
+.valor.reprovado {
+    background-color: #C11010;
+    box-shadow: 0 0 18px rgba(193, 16, 16, .8);
+}
+
+.sigla {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-1);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }

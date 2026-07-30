@@ -52,4 +52,4 @@ export async function renderizarPagina(nomePagina, id = null) {
     main.replaceChildren(pagina)
 }
 
-renderizarPagina('home')
+renderizarPagina('aluno')
