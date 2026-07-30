@@ -3,9 +3,8 @@
 import { getAlunosByIdCurso } from "../router/aluno.js"
 
 export async function criarTurma(curso) {
-
     const main = document.createElement('div')
-    main.classList.add('turmas')
+    main.classList.add('main-turma')
 
     const headerStatus = document.createElement('div')
     headerStatus.classList.add('header-status')
@@ -35,16 +34,14 @@ export async function criarTurma(curso) {
         }
     ]
 
-    opcaoStatus.forEach(item => {
-
+    opcaoStatus.forEach(function (item) {
         const option = document.createElement('option')
         option.value = item.valor
         option.textContent = item.texto
-
-        select.appendChild(option)
+        select.append(option)
     })
 
-    statusLeft.appendChild(select)
+    statusLeft.append(select)
 
     const statusRight = document.createElement('div')
     statusRight.classList.add('status-right')
@@ -77,9 +74,7 @@ export async function criarTurma(curso) {
     statusRight.append(legendaTitulo, legendaCursando, legendaFinalizado)
 
     status.append(statusLeft, statusRight)
-    headerStatus.appendChild(status)
-
-    main.appendChild(headerStatus)
+    headerStatus.append(status)
 
     const alunos = await getAlunosByIdCurso(curso.id)
 
@@ -89,16 +84,20 @@ export async function criarTurma(curso) {
     const titulo = document.createElement('h1')
     titulo.textContent = curso.nome
 
-    tituloAlunos.appendChild(titulo)
-
-    main.appendChild(tituloAlunos)
+    tituloAlunos.append(titulo)
 
     const containerCards = document.createElement('div')
     containerCards.classList.add('cards-alunos')
 
-    alunos.forEach(aluno => {
+    alunos.forEach(function (aluno) {
         const card = document.createElement('div')
         card.classList.add('card-aluno')
+
+        if (aluno.status.toLowerCase() == 'cursando') {
+            card.classList.add('cursando')
+        } else {
+            card.classList.add('finalizado')
+        }
 
         const imagem = document.createElement('img')
         imagem.src = aluno.foto
@@ -110,12 +109,12 @@ export async function criarTurma(curso) {
         const statusAluno = document.createElement('span')
         statusAluno.textContent = aluno.status
 
-        card.append(imagem,nome,statusAluno)
+        card.append(imagem, nome, statusAluno)
 
-        containerCards.appendChild(card)
+        containerCards.append(card)
     })
 
-    main.appendChild(containerCards)
+    main.append(headerStatus, tituloAlunos, containerCards)
 
     return main
 }

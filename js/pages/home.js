@@ -2,7 +2,6 @@
 
 import { renderizarPagina } from "../main.js"
 import { getCursos } from "../router/curso.js"
-import { criarTurma } from "./turma.js"
 
 export async function criarHome() {
     const hero = document.createElement('div')
