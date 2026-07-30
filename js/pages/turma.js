@@ -81,7 +81,7 @@ export async function criarTurma(curso) {
     const tituloAlunos = document.createElement('div')
     tituloAlunos.classList.add('titulo-alunos')
 
-    const titulo = document.createElement('h1')
+    const titulo = document.createElement('span')
     titulo.textContent = curso.nome
 
     tituloAlunos.append(titulo)

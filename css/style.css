@@ -207,6 +207,8 @@ button {
         text-align: center;
         font-size: 30px;
         width: 280px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .hero-left img {
@@ -346,7 +348,8 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 50px;
+    font-weight: 600;
     width: 100%;
     padding: 2rem 0;
     color: var(--color-1);
@@ -406,4 +409,32 @@ select {
 
 .card-aluno.finalizado {
     background-color: #E8B64B;
+}
+
+/* RESPONSIVIDADE MOBILE DA TELA DE TURMA */
+@media (max-width: 480px) {
+
+    .status {
+        flex-direction: column-reverse;
+        font-size: 15px;
+    }
+
+    .azul, .amarelo {
+        width: 15px;
+        height: 15px;
+    }
+
+    .status-right {
+        padding-bottom: 10px;
+    }
+    
+    .titulo-alunos {
+        text-align: center;
+        font-size: 25px;
+        width: 50px;
+    }
+
+    .cards-alunos {
+        grid-template-columns: repeat(1, 200px);
+    }
 }
