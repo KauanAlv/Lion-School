@@ -9,7 +9,6 @@ export async function criarAluno(id) {
     const heroAluno = document.createElement('div')
     heroAluno.classList.add('hero-aluno')
 
-    // Caixa do aluno
     const caixaAluno = document.createElement('div')
     caixaAluno.classList.add('caixa', 'aluno')
 
@@ -22,7 +21,6 @@ export async function criarAluno(id) {
 
     caixaAluno.append(foto, nome)
 
-    // Caixa do gráfico
     const caixaGrafico = document.createElement('div')
     caixaGrafico.classList.add('caixa', 'grafico')
 
@@ -43,18 +41,16 @@ export async function criarAluno(id) {
 
         valor.style.height = `${item.valor}%`
 
-        let classe
-
         if (item.valor > 50) {
-            classe = 'aprovado'
+            nota.classList.add('aprovado')
+            valor.classList.add('aprovado')
         } else if (item.valor >= 30) {
-            classe = 'recuperacao'
+            nota.classList.add('recuperacao')
+            valor.classList.add('recuperacao')
         } else {
-            classe = 'reprovado'
+            nota.classList.add('reprovado')
+            valor.classList.add('reprovado')
         }
-
-        nota.classList.add(classe)
-        valor.classList.add(classe)
 
         column.append(valor)
 
