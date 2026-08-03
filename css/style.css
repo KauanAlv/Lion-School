@@ -513,14 +513,10 @@ select {
     background-color: #EEEFF8;
 }
 
-.valor {
-    width: 100%;
-    background-color: var(--color-1);
-    box-shadow: 0 0 18px rgba(50, 72, 216, 0.9);
-}
+
 
 .valor.aprovado {
-    background-color: var(--color-1);
+    background-color: #3347B0;
     box-shadow: 0 0 18px rgba(51, 71, 176, .8);
 }
 
@@ -532,6 +528,18 @@ select {
 .valor.reprovado {
     background-color: #C11010;
     box-shadow: 0 0 18px rgba(193, 16, 16, .8);
+}
+
+.nota.aprovado {
+    color: #3347B0;
+}
+
+.nota.recuperacao {
+    color: #E5B657;
+}
+
+.nota.reprovado {
+    color: #C11010;
 }
 
 .sigla {

@@ -1,8 +1,12 @@
 'use strict'
 
 import { getAlunosByIdCurso } from "../router/aluno.js"
+import { renderizarPagina, cursoAtual } from '../main.js'
 
 export async function criarTurma(curso) {
+
+    cursoAtual.valor = curso
+
     const main = document.createElement('div')
     main.classList.add('main-turma')
 
@@ -96,6 +100,10 @@ export async function criarTurma(curso) {
 
             const card = document.createElement('div')
             card.classList.add('card-aluno')
+            card.onclick = function () {
+                cursoAtual.valor = curso
+                renderizarPagina('aluno', aluno.id)
+            }
 
             if (aluno.status == 'cursando') {
                 card.classList.add('cursando')

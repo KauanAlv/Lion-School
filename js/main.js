@@ -2,7 +2,7 @@
 
 import { criarHome } from './pages/home.js'
 import { criarTurma } from './pages/turma.js'
-/* import {criarAluno} from './pages/alunos.js' */
+import { criarAluno } from './pages/aluno.js'
 
 const paginas = {
     home: {
@@ -22,34 +22,40 @@ const paginas = {
         acaoHeader: function () {
             renderizarPagina('home')
         }
-    }/*,
+    },
     aluno: {
         titulo: 'Dados do aluno',
         classeMain: 'main-aluno',
         renderizar: criarAluno,
         textoHeader: 'Voltar',
         acaoHeader: function () {
-            renderizarPagina('curso')
-        }  
-    } */
+            renderizarPagina('curso', cursoAtual.valor)
+        }
+    }
+}
+
+export const cursoAtual = {
+    valor: null
 }
 
 const botaoHeader = document.getElementById('botao-header')
 const textoHeader = document.getElementById('texto-header')
 
-export async function renderizarPagina(nomePagina, id = null) {
+export async function renderizarPagina(nomePagina, dado = null) {
     const main = document.getElementById('main')
 
     const paginaAtual = paginas[nomePagina]
+
     document.title = paginaAtual.titulo
-    
+
     textoHeader.textContent = paginaAtual.textoHeader
     botaoHeader.onclick = paginaAtual.acaoHeader
-    
-    const pagina = await paginaAtual.renderizar(id)
-    
+
+    const pagina = await paginaAtual.renderizar(dado)
+
     main.className = paginaAtual.classeMain
     main.replaceChildren(pagina)
 }
 
-renderizarPagina('aluno')
+
+renderizarPagina('home')
